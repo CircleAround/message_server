@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Contents:</strong>
+  <%= @message.contents %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @message.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_api_message_path(@message) %> |
+<%= link_to 'Back', api_messages_path %>
