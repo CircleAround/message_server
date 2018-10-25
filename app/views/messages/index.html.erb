@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Contents</th>
       <th>User</th>
       <th>Image</th>
@@ -15,8 +16,9 @@
   <tbody>
     <% @messages.each do |message| %>
       <tr>
+        <td><%= message.id %></td>
         <td><%= message.contents %></td>
-        <td><%= message.user_id %></td>
+        <td><%= link_to message.user_id, message.user %></td>
         <td>
           <% if message.image.attached? %>
             <%= link_to '画像', polymorphic_path(message.image) %>
