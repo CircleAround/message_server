@@ -1,6 +1,5 @@
 class Api::RegistrationsController < ApiController
   def sign_up
-    puts registration_params
     @user = User.sign_up!(registration_params)
     respond_to do |format|
       format.json do
@@ -10,7 +9,6 @@ class Api::RegistrationsController < ApiController
   end
 
   def login
-    puts registration_params
     @user = User.login!(registration_params)
     respond_to do |format|
       format.json do
@@ -20,6 +18,10 @@ class Api::RegistrationsController < ApiController
   end
 
   private
+
+  def enable_authenticated?
+    false
+  end
 
   def registration_params
     params.require(:registration).permit(:email)

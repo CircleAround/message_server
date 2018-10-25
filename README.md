@@ -2,6 +2,16 @@
 
 https://message-server-app.herokuapp.com
 
+## Users
+### Sign up
+
+
+
+### Login
+
+
+## Messages
+
 ### Create Message
 
 ```
@@ -36,4 +46,12 @@ curl -X DELETE -H "Content-Type: application/json" -H "Authorization: 0a86cb7dac
 
 // CODE 204 
 No Response Body
+```
+
+### Get All Message
+
+```
+curl -X GET -H "Content-Type: application/json" -H "Authorization: 0a86cb7dac9f3a50" message-server-app.herokuapp.com/api/messages/
+
+[{"id":1,"contents":"test","user_id":1,"url":"http://message-server-app.herokuapp.com/messages/1.json"},{"id":2,"contents":"test","user_id":1,"url":"http://message-server-app.herokuapp.com/messages/2.json"}]
 ```
