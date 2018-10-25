@@ -4,7 +4,7 @@ class Api::MessagesController < ApiController
   # GET /api/messages
   # GET /api/messages.json
   def index
-    @messages = Message.all.limit(25)
+    @messages = Message.all.limit(25).order(id: :desc)
   end
 
   # GET /api/messages/1
