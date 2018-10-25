@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  namespace :api do
+  namespace :api, format: :json do
     resources :messages
-  end
-  namespace :api do
-    resources :users
+    resource :user, only: [:show, :update, :destroy]
+
+    post :sign_up, to: "registrations#sign_up"
+    post :login, to: "registrations#login"
   end
   resources :messages
   resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
