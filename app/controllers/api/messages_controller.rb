@@ -4,21 +4,12 @@ class Api::MessagesController < ApiController
   # GET /api/messages
   # GET /api/messages.json
   def index
-    @messages = Message.all
+    @messages = Message.all.limit(25)
   end
 
   # GET /api/messages/1
   # GET /api/messages/1.json
   def show
-  end
-
-  # GET /api/messages/new
-  def new
-    @message = Message.new
-  end
-
-  # GET /api/messages/1/edit
-  def edit
   end
 
   # POST /api/messages

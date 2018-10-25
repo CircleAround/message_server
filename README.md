@@ -5,9 +5,24 @@ https://message-server-app.herokuapp.com
 ## Users
 ### Sign up
 
+新規ユーザーを作成します。tokenをリクエストヘッダに入れることでmessageに対して各種処理を実現できます。
 
+```
+curl -X POST -H "Content-Type: application/json" -d '{"email":"test2@example.com"}' message-server-app.herokuapp.com/api/sign_up
+
+{"email":"test2@example.com","token":"212cebd4164d5e1a","created_at":"2018-10-25T07:34:04.406Z","updated_at":"2018-10-25T07:34:04.406Z"}
+```
 
 ### Login
+
+簡易的なログインです。メールアドレスに一致するユーザに対して新しいトークンを発行します。
+
+```
+curl -X POST -H "Content-Type: application/json" -d '{"email":"test2@example.com"}' message-server-app.herokuapp.com/api/login
+
+{"email":"test2@example.com","token":"81deb223e630f74d","created_at":"2018-10-25T07:34:04.406Z","updated_at":"2018-10-25T07:35:21.996Z"}
+```
+
 
 
 ## Messages
