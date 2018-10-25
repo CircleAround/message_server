@@ -36,10 +36,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'pg', '~> 0.21'
 gem 'dotenv-rails'
-gem 'kaminari'
-gem 'enum_help'
 gem 'rails-admin-scaffold'
-gem 'devise'
+
+gem 'cloudinary', require: false
+gem 'activestorage-cloudinary-service'
 
 
 group :development, :test do

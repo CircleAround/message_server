@@ -10,5 +10,9 @@
   <%= @message.user %>
 </p>
 
+<% if @message.image.attached? %>
+  <%= image_tag @message.image %>
+<% end %>
+
 <%= link_to 'Edit', edit_message_path(@message) %> |
 <%= link_to 'Back', messages_path %>

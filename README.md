@@ -2,7 +2,9 @@
 
 https://message-server-app.herokuapp.com
 
-## Users
+## Registrations
+ユーザー登録や、トークン再発行です。
+
 ### Sign up
 
 新規ユーザーを作成します。tokenをリクエストヘッダに入れることでmessageに対して各種処理を実現できます。
@@ -26,6 +28,8 @@ curl -X POST -H "Content-Type: application/json" -d '{"email":"test2@example.com
 
 
 ## Messages
+Authorizationに指定する文字列は、Usersで作成したユーザが持っているtokenの値です。読み替えて利用してください。
+
 
 ### Create Message
 
