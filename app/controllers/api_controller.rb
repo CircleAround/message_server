@@ -10,6 +10,7 @@ class ApiController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid,
               with: :rescue_invalid
   rescue_from ActiveRecord::RecordNotFound,
+              ActionController::RoutingError,
               with: :rescue404
   rescue_from UnauthorizedError,
               with: :rescue401
