@@ -7,6 +7,7 @@
     <tr>
       <th>Contents</th>
       <th>User</th>
+      <th>Image</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,8 +16,12 @@
     <% @messages.each do |message| %>
       <tr>
         <td><%= message.contents %></td>
-        <td><%= message.user %></td>
-        <td><%= url_for(message.image) if message.image.attached? %></td>
+        <td><%= message.user_id %></td>
+        <td>
+          <% if message.image.attached? %>
+            <%= link_to '画像', polymorphic_path(message.image) %>
+          <% end %>
+        </td>
         <td><%= link_to 'Show', message %></td>
         <td><%= link_to 'Edit', edit_message_path(message) %></td>
         <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
