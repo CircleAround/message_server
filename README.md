@@ -75,7 +75,7 @@ curl -X DELETE -H "Content-Type: application/json" -H "Authorization: 0a86cb7dac
 No Response Body
 ```
 
-### Get All Message
+### Get All Messages
 
 ```
 curl -X GET -H "Content-Type: application/json" -H "Authorization: 0a86cb7dac9f3a50" message-server-app.herokuapp.com/api/messages/
