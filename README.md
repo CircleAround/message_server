@@ -33,11 +33,19 @@ Authorizationに指定する文字列は、Usersで作成したユーザが持�
 
 ### Create Message
 
+通常のメッセージ作成
+
 ```
 curl -X POST -H "Content-Type: application/json" -H "Authorization: 0a86cb7dac9f3a50" -d '{"contents":"test"}' message-server-app.herokuapp.com/api/messages
 
 // CODE 201
 {"id":3,"contents":"test","user_id":1,"created_at":"2018-10-25T06:47:40.865Z","updated_at":"2018-10-25T06:47:40.865Z"}
+```
+
+ファイルアップロード
+
+```
+curl -H "Authorization: 80cf158674613931" -F message[contents]="メッセージ" -F message[image]=@/path/to/image.jpg message-server-app.herokuapp.com/api/messages
 ```
 
 ### Update Message

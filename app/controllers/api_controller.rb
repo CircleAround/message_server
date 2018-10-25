@@ -44,7 +44,7 @@ class ApiController < ApplicationController
   end
 
   def rescue_invalid(e)
-    render_fail e.record.errors.full_messages, :unprocessable_entity
+    render_fail e.record.errors.full_messages.join("\n"), :unprocessable_entity
   end
 
   def render_fail(errors, status)
