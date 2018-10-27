@@ -62,8 +62,9 @@ class MessagesController < ApplicationController
   end
 
   def attach_image
+    @message.image = message_image_params[:image]
     respond_to do |format|
-      if @message.update(message_image_params)
+      if @message.save!
         format.html { redirect_to @message, notice: '画像をアップロードしました' }
         format.json { render :show, status: :created, location: @message }
       else

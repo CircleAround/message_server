@@ -43,8 +43,9 @@ class Api::MessagesController < ApiController
   end
 
   def attach_image
+    @message.image = message_image_params[:image]
     respond_to do |format|
-      @message.update!(message_image_params)
+      @message.save!
       format.json { head :no_content }
     end
   end
