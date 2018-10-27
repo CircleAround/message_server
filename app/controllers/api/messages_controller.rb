@@ -1,5 +1,5 @@
 class Api::MessagesController < ApiController
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :set_message, only: [:show, :edit, :update, :destroy, :attach_image]
 
   # GET /api/messages
   # GET /api/messages.json
@@ -42,6 +42,13 @@ class Api::MessagesController < ApiController
     end
   end
 
+  def attach_image
+    respond_to do |format|
+      @message.update!(message_image_params)
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_message
@@ -50,6 +57,10 @@ class Api::MessagesController < ApiController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.require(:message).permit(:contents, :image)
+      params.require(:message).permit(:contents)
+    end
+
+    def message_image_params
+      params.require(:message).permit(:image)
     end
 end
