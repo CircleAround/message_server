@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :set_message, only: [:show, :edit, :update, :destroy, :attach_image]
 
   # GET /messages
   # GET /messages.json
@@ -61,6 +61,18 @@ class MessagesController < ApplicationController
     end
   end
 
+  def attach_image
+    respond_to do |format|
+      if @message.update(message_image_params)
+        format.html { redirect_to @message, notice: '画像をアップロードしました' }
+        format.json { render :show, status: :created, location: @message }
+      else
+        format.html { render :show }
+        format.json { render json: @message.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_message
@@ -69,6 +81,10 @@ class MessagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.require(:message).permit(:contents, :user_id, :image)
+      params.require(:message).permit(:contents, :user_id)
+      end
+
+    def message_image_params
+      params.require(:message).permit(:image)
     end
 end
