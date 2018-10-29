@@ -52,10 +52,10 @@ curl -X POST -H "Content-Type: application/json" -H "Authorization: 0a86cb7dac9f
 {"id":3,"contents":"test","user_id":1,"created_at":"2018-10-25T06:47:40.865Z","updated_at":"2018-10-25T06:47:40.865Z"}
 ```
 
-ファイルアップロード
+画像ファイルアップロード
 
 ```
-curl -H "Authorization: 80cf158674613931" -F message[contents]="メッセージ" -F message[image]=@/path/to/image.jpg message-server-app.herokuapp.com/api/messages
+curl -H "Authorization: b06a8520b289e1bc" -F message[image]=@/path/to/image message-server-app.herokuapp.com/api/messages/12/images
 ```
 
 ### Update Message
