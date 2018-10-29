@@ -8,9 +8,7 @@ Rails.application.routes.draw do
     post :login, to: "registrations#login"
   end
 
-  resources :messages do
-    post 'images', to: 'messages#attach_image', on: :member
-  end
+  resources :messages
   resources :users
 
   root to: 'messages#index'
