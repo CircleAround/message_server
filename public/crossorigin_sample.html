@@ -1,0 +1,21 @@
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+<script>
+  $(function(){
+    $.ajax({
+      url: 'http://test.localhost.com:3000/api/messages',
+      headers: {
+        Authorization: 'f184457dba69c5bb'
+      }
+    }).then(function(data){
+      console.log(data);
+    }, function(e, t, s){
+      console.log(t, s);
+    })
+  })
+</script>
+</body>
+</html>
