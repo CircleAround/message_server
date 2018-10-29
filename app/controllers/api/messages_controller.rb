@@ -50,6 +50,6 @@ class Api::MessagesController < ApiController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.require(:message).permit(:contents, :image)
+      params.require(:message).permit(:contents)
     end
 end
