@@ -1,6 +1,6 @@
-class Tasks::KeepDataCount
-  def self.execute
-
+namespace :keep_data_count do
+  desc "Keep data count(User = 100,Message = 500)"
+  task :delete_over_count_data => :environment do
     user_count = User.count
 
     if user_count > 100
@@ -34,7 +34,6 @@ class Tasks::KeepDataCount
         message_count -= 1
       end
     end
+    puts "終了！"
   end
 end
-
-puts "終了！"
