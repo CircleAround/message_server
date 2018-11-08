@@ -12,6 +12,10 @@ https://message-server-app.herokuapp.com
 
 サークルアラウンド社で行なっているiOSトレーニングのアプリ開発の練習用に作成しました。
 
+### クライアント実装
+- https://github.com/KazuGeoge/texchdrive-plactice : KazuGeogeさんがトレーニングで作成したSwiftの実装
+- https://github.com/CircleAround/message_server_js : ms2satoが作成したJSの実装
+
 ## Registrations
 ユーザー登録や、トークン再発行です。
 
