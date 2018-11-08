@@ -1,0 +1,8 @@
+ja:
+  views:
+    pagination:
+      first: "&lt;&lt;"
+      last: "&gt;&gt;"
+      previous: "戻る"
+      next: "次へ"
+      truncate: "&hellip;"
