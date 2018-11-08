@@ -42,6 +42,7 @@ gem 'cloudinary', require: false
 gem 'activestorage-cloudinary-service'
 
 gem 'rack-cors'
+gem 'rollbar'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
