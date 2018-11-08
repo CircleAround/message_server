@@ -43,6 +43,8 @@ gem 'activestorage-cloudinary-service'
 
 gem 'rack-cors'
 gem 'rollbar'
+gem 'kaminari'
+gem 'i18n'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
